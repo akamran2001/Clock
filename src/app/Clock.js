@@ -58,6 +58,14 @@ export default function Clock() {
       <div className="d-flex justify-content-center text-white">
         <h1>{getDateString()}</h1>
       </div>
+      <div
+        className="d-flex justify-content-center text-white"
+        style={{ fontFamily: "monospace" }}
+      >
+        <a href="https://github.com/akamran2001/Clock" className="btn-grad">
+          Created by Ahmed
+        </a>
+      </div>
     </div>
   );
 }
