@@ -1,23 +1,32 @@
 {
   "files": {
     "main.css": "/Clock/static/css/main.04e95245.chunk.css",
-    "main.js": "/Clock/static/js/main.48e6e58b.chunk.js",
-    "main.js.map": "/Clock/static/js/main.48e6e58b.chunk.js.map",
-    "runtime-main.js": "/Clock/static/js/runtime-main.7e72677b.js",
-    "runtime-main.js.map": "/Clock/static/js/runtime-main.7e72677b.js.map",
-    "static/js/2.82ccd240.chunk.js": "/Clock/static/js/2.82ccd240.chunk.js",
-    "static/js/2.82ccd240.chunk.js.map": "/Clock/static/js/2.82ccd240.chunk.js.map",
-    "static/js/3.eb562352.chunk.js": "/Clock/static/js/3.eb562352.chunk.js",
-    "static/js/3.eb562352.chunk.js.map": "/Clock/static/js/3.eb562352.chunk.js.map",
+    "main.js": "/Clock/static/js/main.cf508043.chunk.js",
+    "main.js.map": "/Clock/static/js/main.cf508043.chunk.js.map",
+    "runtime-main.js": "/Clock/static/js/runtime-main.82bc7f55.js",
+    "runtime-main.js.map": "/Clock/static/js/runtime-main.82bc7f55.js.map",
+    "static/js/2.74ce26b0.chunk.js": "/Clock/static/js/2.74ce26b0.chunk.js",
+    "static/js/2.74ce26b0.chunk.js.map": "/Clock/static/js/2.74ce26b0.chunk.js.map",
+    "static/js/3.117d7c1a.chunk.js": "/Clock/static/js/3.117d7c1a.chunk.js",
+    "static/js/3.117d7c1a.chunk.js.map": "/Clock/static/js/3.117d7c1a.chunk.js.map",
     "index.html": "/Clock/index.html",
     "static/css/main.04e95245.chunk.css.map": "/Clock/static/css/main.04e95245.chunk.css.map",
-    "static/js/2.82ccd240.chunk.js.LICENSE.txt": "/Clock/static/js/2.82ccd240.chunk.js.LICENSE.txt",
+    "static/js/2.74ce26b0.chunk.js.LICENSE.txt": "/Clock/static/js/2.74ce26b0.chunk.js.LICENSE.txt",
+    "static/media/0.png": "/Clock/static/media/0.f3f5bc55.png",
+    "static/media/1.png": "/Clock/static/media/1.0018df5f.png",
+    "static/media/2.png": "/Clock/static/media/2.6ef8b5c6.png",
+    "static/media/3.png": "/Clock/static/media/3.edeb2092.png",
+    "static/media/4.png": "/Clock/static/media/4.89a5c00f.png",
+    "static/media/5.png": "/Clock/static/media/5.1789e31d.png",
+    "static/media/6.png": "/Clock/static/media/6.1f8540e0.png",
+    "static/media/7.png": "/Clock/static/media/7.bdcedeea.png",
+    "static/media/9.png": "/Clock/static/media/9.2c803296.png",
     "static/media/App.css": "/Clock/static/media/DS-DIGII.67d08007.TTF"
   },
   "entrypoints": [
-    "static/js/runtime-main.7e72677b.js",
-    "static/js/2.82ccd240.chunk.js",
+    "static/js/runtime-main.82bc7f55.js",
+    "static/js/2.74ce26b0.chunk.js",
     "static/css/main.04e95245.chunk.css",
-    "static/js/main.48e6e58b.chunk.js"
+    "static/js/main.cf508043.chunk.js"
   ]
 }
