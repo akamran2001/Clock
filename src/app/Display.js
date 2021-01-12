@@ -9,7 +9,7 @@ function Display(props) {
       return (
         <img
           alt="colon"
-          src="assets/colon.png"
+          src={require("../assets/colon.png").default}
           width="10%"
           height="10%"
           style={
@@ -39,7 +39,7 @@ function Display(props) {
       return (
         <img
           alt={`${digit}`}
-          src={`assets/${digit}.png`}
+          src={require(`../assets/${digit}.png`).default}
           width="10%"
           height="10%"
         />
