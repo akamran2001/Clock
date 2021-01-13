@@ -39,7 +39,7 @@ export default function Clock() {
   }, [is24]);
   //Render JSX
   return (
-    <div className="container" style={{ backgroundColor: "black" }}>
+    <div className="container">
       <br />
       <div className="d-flex justify-content-center">
         <button

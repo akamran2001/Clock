@@ -37,6 +37,7 @@
   transform: translate(-50%, -50%);
   font-family: DS-Digital;
   border-radius: 25px;
+  background-color: black;
 }
 .App-logo {
   height: 40vmin;
