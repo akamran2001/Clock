@@ -1,7 +1,6 @@
 import React from "react";
 import "../index.css";
 import "../App.css";
-
 function Display(props) {
   const getDigit = (digit) => {
     //Display Clock digit or letter
@@ -32,6 +31,8 @@ function Display(props) {
           PM
         </h1>
       );
+    } else if (digit === " ") {
+      return <h1 id="period"> </h1>;
     } else if (digit === "M") {
       return null;
     } else {
@@ -40,10 +41,12 @@ function Display(props) {
   };
   //Render JSX
   return (
-    <div className="d-flex justify-content-center clock-text">
-      {props.time.split("").map((value) => {
-        return getDigit(value);
-      })}
+    <div className="row">
+      <div className="d-flex justify-content-center clock-text col" id="time">
+        {props.time.split("").map((value) => {
+          return getDigit(value);
+        })}
+      </div>
     </div>
   );
 }

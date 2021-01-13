@@ -1,12 +1,35 @@
+.row {
+  /* border-width: 2px;
+  border-style: solid;
+  border-color: white; */
+}
+.col {
+  /* border-width: 5px;
+  border-style: solid; */
+}
+#time {
+  border-color: red;
+}
+#weather {
+  border-color: blue;
+}
 .clock-text #digits {
   font-size: 20vw;
 }
 .clock-text #period {
   font-size: 10vw;
   margin-top: 10vw;
+  overflow: hidden;
 }
 .date-text h1 {
   font-size: 5vw;
+}
+.weather-text h1 {
+  font-size: 5vw;
+  color: gold;
+}
+.weather-text {
+  background-color: maroon;
 }
 .btn-grad {
   background-image: linear-gradient(

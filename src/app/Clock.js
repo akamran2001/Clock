@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../index.css";
 import "../App.css";
 import Display from "./Display";
+import Weather from "./Weather";
 export default function Clock() {
   //States and Functions
   const [is24, set24] = useState(false);
@@ -15,6 +16,9 @@ export default function Clock() {
     let military = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     if (normal[0] === "0") {
       normal = "12" + normal.substring(1, normal.length);
+    }
+    while (normal.length < 11) {
+      normal = normal + " ";
     }
     return `${is24 ? military : normal}`;
   };
@@ -53,14 +57,15 @@ export default function Clock() {
           </button>
         </div>
       </div>
+
+      <Display time={time} sec={getSec()} />
+
       <div className="row">
-        <Display time={time} sec={getSec()} />
-      </div>
-      <div className="row">
-        <div className="d-flex justify-content-center text-info date-text">
+        <div className="d-flex justify-content-center text-info bg-dark date-text">
           <h1>{getDateString()}</h1>
         </div>
       </div>
+      <Weather />
       <div className="row">
         <div
           className="d-flex justify-content-center text-white"
@@ -71,7 +76,7 @@ export default function Clock() {
             href="https://github.com/akamran2001/Clock"
             className="btn-grad btn-credit"
           >
-            Created by Ahmed
+            Created by Ahmed Kamran
           </a>
         </div>
       </div>
