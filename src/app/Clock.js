@@ -55,14 +55,18 @@ export default function Clock() {
       <br />
       <Display time={time} sec={getSec()} />
       <br />
-      <div className="d-flex justify-content-center text-white">
+      <div className="d-flex justify-content-center text-info date-text">
         <h1>{getDateString()}</h1>
       </div>
       <div
         className="d-flex justify-content-center text-white"
         style={{ fontFamily: "monospace" }}
       >
-        <a href="https://github.com/akamran2001/Clock" className="btn-grad">
+        <a
+          style={{ textDecoration: "none" }}
+          href="https://github.com/akamran2001/Clock"
+          className="btn-grad"
+        >
           Created by Ahmed
         </a>
       </div>

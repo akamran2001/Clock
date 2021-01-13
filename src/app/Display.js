@@ -7,48 +7,40 @@ function Display(props) {
     //Display Clock digit or letter
     if (digit === ":") {
       return (
-        <img
-          alt="colon"
-          src={require("../assets/colon.png").default}
-          width="10%"
-          height="10%"
-          style={
-            props.sec % 2 === 0
-              ? { backgroundColor: "white" }
-              : { backgroundColor: "red" }
-          }
-        />
+        <h1
+          id="digits"
+          style={props.sec % 2 === 0 ? { color: "white" } : { color: "red" }}
+        >
+          {digit}
+        </h1>
       );
-    } else if (digit === " ") {
-      return <h1> </h1>;
     } else if (digit === "A") {
       return (
-        <h1 style={props.sec % 2 === 0 ? { color: "red" } : { color: "white" }}>
+        <h1
+          id="period"
+          style={props.sec % 2 === 0 ? { color: "red" } : { color: "white" }}
+        >
           AM
         </h1>
       );
     } else if (digit === "P") {
       return (
-        <h1 style={props.sec % 2 === 0 ? { color: "red" } : { color: "white" }}>
+        <h1
+          id="period"
+          style={props.sec % 2 === 0 ? { color: "red" } : { color: "white" }}
+        >
           PM
         </h1>
       );
     } else if (digit === "M") {
       return null;
     } else {
-      return (
-        <img
-          alt={`${digit}`}
-          src={require(`../assets/${digit}.png`).default}
-          width="10%"
-          height="10%"
-        />
-      );
+      return <h1 id="digits">{digit}</h1>;
     }
   };
   //Render JSX
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center clock-text">
       {props.time.split("").map((value) => {
         return getDigit(value);
       })}
