@@ -70,6 +70,7 @@ export default function Clock() {
           Created by Ahmed
         </a>
       </div>
+      <br />
     </div>
   );
 }
