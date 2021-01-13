@@ -37,7 +37,10 @@
   color: #fff;
   text-decoration: none;
 }
-
+.btn-credit {
+  position: absolute;
+  bottom: 0;
+}
 .container {
   margin: 0;
   position: absolute;
@@ -49,7 +52,10 @@
   border-radius: 25px;
   background-color: #4d4855;
   background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+  width: 90vw;
+  height: 75vh;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

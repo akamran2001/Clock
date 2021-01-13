@@ -65,7 +65,7 @@ export default function Clock() {
         <a
           style={{ textDecoration: "none" }}
           href="https://github.com/akamran2001/Clock"
-          className="btn-grad"
+          className="btn-grad btn-credit"
         >
           Created by Ahmed
         </a>
