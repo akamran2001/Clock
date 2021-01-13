@@ -40,37 +40,41 @@ export default function Clock() {
   //Render JSX
   return (
     <div className="container">
-      <br />
-      <div className="d-flex justify-content-center">
-        <button
-          type="button"
-          className="btn-grad"
-          onClick={() => {
-            set24(!is24);
-          }}
+      <div className="row">
+        <div className="d-flex justify-content-center">
+          <button
+            type="button"
+            className="btn-grad"
+            onClick={() => {
+              set24(!is24);
+            }}
+          >
+            {is24 ? "Toggle to 12hr" : "Toggle to 24hr"}
+          </button>
+        </div>
+      </div>
+      <div className="row">
+        <Display time={time} sec={getSec()} />
+      </div>
+      <div className="row">
+        <div className="d-flex justify-content-center text-info date-text">
+          <h1>{getDateString()}</h1>
+        </div>
+      </div>
+      <div className="row">
+        <div
+          className="d-flex justify-content-center text-white"
+          style={{ fontFamily: "monospace" }}
         >
-          {is24 ? "Toggle to 12hr" : "Toggle to 24hr"}
-        </button>
+          <a
+            style={{ textDecoration: "none" }}
+            href="https://github.com/akamran2001/Clock"
+            className="btn-grad btn-credit"
+          >
+            Created by Ahmed
+          </a>
+        </div>
       </div>
-      <br />
-      <Display time={time} sec={getSec()} />
-      <br />
-      <div className="d-flex justify-content-center text-info date-text">
-        <h1>{getDateString()}</h1>
-      </div>
-      <div
-        className="d-flex justify-content-center text-white"
-        style={{ fontFamily: "monospace" }}
-      >
-        <a
-          style={{ textDecoration: "none" }}
-          href="https://github.com/akamran2001/Clock"
-          className="btn-grad btn-credit"
-        >
-          Created by Ahmed
-        </a>
-      </div>
-      <br />
     </div>
   );
 }
