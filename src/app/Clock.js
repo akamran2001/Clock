@@ -45,16 +45,18 @@ export default function Clock() {
   return (
     <div className="container">
       <div className="row">
-        <div className="d-flex justify-content-center">
-          <button
-            type="button"
-            className="btn-grad"
+        <div className="form-check form-switch d-flex justify-content-center">
+          <input
+            class="form-check-input switch"
+            type="checkbox"
+            id="flexSwitchCheckDefault"
             onClick={() => {
               set24(!is24);
             }}
-          >
-            {is24 ? "Toggle to 12hr" : "Toggle to 24hr"}
-          </button>
+          />
+          <label class="custom-control-label" for="customSwitch1">
+            <h5>{is24 ? "Military" : "Standard"}</h5>
+          </label>
         </div>
       </div>
 
@@ -67,18 +69,13 @@ export default function Clock() {
       </div>
       <Weather />
       <div className="row">
-        <div
-          className="d-flex justify-content-center text-white"
-          style={{ fontFamily: "monospace" }}
+        <a
+          className="text-white"
+          style={{ textDecoration: "none" }}
+          href="https://github.com/akamran2001/Clock"
         >
-          <a
-            style={{ textDecoration: "none" }}
-            href="https://github.com/akamran2001/Clock"
-            className="btn-grad btn-credit"
-          >
-            Created by Ahmed Kamran
-          </a>
-        </div>
+          <h7 style={{ fontFamily: "monospace" }}>Created by Ahmed Kamran</h7>
+        </a>
       </div>
     </div>
   );
