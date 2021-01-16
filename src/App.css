@@ -7,7 +7,26 @@
   /* border-width: 5px;
   border-style: solid; */
 }
-
+#search-box[type="text"] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  background-color: transparent;
+  color: #fff;
+}
+#search-box[type="text"]:focus {
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+#searchButton {
+  background-color: transparent;
+  color: white;
+  border-width: thin;
+}
+#searchButton:hover {
+  background-color: #5cb85c;
+}
 #time {
   border-color: red;
 }
