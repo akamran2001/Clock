@@ -59,9 +59,31 @@ export default function Clock() {
           </label>
         </div>
       </div>
+      <div className="row" style={{ fontFamily: "sans-serif" }}>
+        <form
+          className="d-flex justify-content-center"
+          method="get"
+          ngnoform=""
+          action="https://www.google.com/search"
+          autoComplete="off"
+        >
+          <input
+            className="form-control"
+            id="search-box"
+            type="text"
+            name="q"
+            placeholder="Google"
+          />
+          <input
+            type="submit"
+            value="search"
+            className="btn material-icons"
+            id="searchButton"
+          />
+        </form>
+      </div>
 
       <Display time={time} sec={getSec()} />
-
       <div className="row">
         <div className="d-flex justify-content-center text-info bg-dark date-text">
           <h1>{getDateString()}</h1>
