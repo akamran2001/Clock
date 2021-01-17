@@ -93,8 +93,8 @@
   transform: translate(-50%, -50%);
   font-family: DS-Digital;
   border-radius: 25px;
-  background-color: #4d4855;
-  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+
+  background-color: rgba(0, 0, 0, 0.8);
   width: 90vw;
   height: auto;
 }
