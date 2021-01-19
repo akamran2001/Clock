@@ -47,14 +47,14 @@ export default function Clock() {
       <div className="row">
         <div className="form-check form-switch d-flex justify-content-center">
           <input
-            class="form-check-input switch"
+            className="form-check-input switch"
             type="checkbox"
             id="flexSwitchCheckDefault"
             onClick={() => {
               set24(!is24);
             }}
           />
-          <label class="custom-control-label" for="customSwitch1">
+          <label className="custom-control-label" htmlFor="customSwitch1">
             <h5>{is24 ? "Military" : "Standard"}</h5>
           </label>
         </div>
@@ -96,7 +96,7 @@ export default function Clock() {
           style={{ textDecoration: "none" }}
           href="https://github.com/akamran2001/Clock"
         >
-          <h7 style={{ fontFamily: "monospace" }}>Created by Ahmed Kamran</h7>
+          <h6 style={{ fontFamily: "monospace" }}>Created by Ahmed Kamran</h6>
         </a>
       </div>
     </div>
