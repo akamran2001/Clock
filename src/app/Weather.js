@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 
-class Weather extends React.Component {
-  state = {
+function Weather(props) {
+  const [weather, setWeather] = useState({
     lat: undefined,
     lon: undefined,
     errorMessage: undefined,
@@ -16,44 +16,19 @@ class Weather extends React.Component {
     sunrise: undefined,
     sunset: undefined,
     moonImage: undefined,
-  };
-
-  componentDidMount() {
-    if (navigator.geolocation) {
-      this.getPosition()
-        .then((position) => {
-          this.getWeather(position.coords.latitude, position.coords.longitude);
-        })
-        .catch((err) => {
-          this.setState({ errorMessage: err.message });
-        });
-    } else {
-      alert("Geolocation not available");
-    }
-
-    this.timerID = setInterval(
-      () => this.getWeather(this.state.lat, this.state.lon),
-      600000
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
-  getPosition = (options) => {
+  });
+  const getPosition = (options) => {
     return new Promise(function (resolve, reject) {
       navigator.geolocation.getCurrentPosition(resolve, reject, options);
     });
   };
-
-  getWeather = async (lat, lon) => {
+  const getWeather = async (lat, lon) => {
     const api_call = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
     );
 
     const data = await api_call.json();
-    this.setState({
+    setWeather({
       lat: lat,
       lon: lon,
       city: data.name,
@@ -68,22 +43,42 @@ class Weather extends React.Component {
     });
   };
 
-  render() {
-    if (this.state.city) {
-      return (
-        <div className="row" id="weather">
-          <div className="d-flex justify-content-center weather-text">
-            <h1>
-              [{this.state.city}, {this.state.country}]{" "}
-              {this.state.temperatureF} {"\u00B0F"} / {this.state.temperatureC}
-              {"\u00B0C"}
-            </h1>
-          </div>
-        </div>
-      );
+  useEffect(() => {
+    if (navigator.geolocation) {
+      getPosition()
+        .then((position) => {
+          getWeather(position.coords.latitude, position.coords.longitude);
+        })
+        .catch((err) => {
+          setWeather({ errorMessage: err.message });
+        });
     } else {
-      return null;
+      alert("Geolocation not available");
     }
+
+    const interval = setInterval(
+      () => getWeather(weather.lat, weather.lon),
+      600000
+    );
+    return () => {
+      clearInterval(interval);
+    };
+  }, [weather]);
+
+  if (weather.city) {
+    return (
+      <div className="row" id="weather">
+        <div className="d-flex justify-content-center weather-text">
+          <h1>
+            [{weather.city}, {weather.country}] {weather.temperatureF}{" "}
+            {"\u00B0F"} / {weather.temperatureC}
+            {"\u00B0C"}
+          </h1>
+        </div>
+      </div>
+    );
+  } else {
+    return null;
   }
 }
 
