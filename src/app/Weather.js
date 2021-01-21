@@ -26,27 +26,31 @@ function Weather(props) {
     const api_call = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
     );
-
     const data = await api_call.json();
-    setWeather({
-      lat: lat,
-      lon: lon,
-      city: data.name,
-      temperatureC: Math.round(data.main.temp),
-      temperatureF: Math.round(data.main.temp * 1.8 + 32),
-      humidity: data.main.humidity,
-      description: data.weather[0].description,
-      icon: data.weather[0].icon,
-      sunrise: moment.unix(data.sys.sunrise).format("hh:mm a"),
-      sunset: moment.unix(data.sys.sunset).format("hh:mm a"),
-      country: data.sys.country,
-    });
+    try {
+      setWeather({
+        lat: lat,
+        lon: lon,
+        city: data.name,
+        temperatureC: Math.round(data.main.temp),
+        temperatureF: Math.round(data.main.temp * 1.8 + 32),
+        humidity: data.main.humidity,
+        description: data.weather[0].description,
+        icon: data.weather[0].icon,
+        sunrise: moment.unix(data.sys.sunrise).format("hh:mm a"),
+        sunset: moment.unix(data.sys.sunset).format("hh:mm a"),
+        country: data.sys.country,
+      });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   useEffect(() => {
     if (navigator.geolocation) {
       getPosition()
         .then((position) => {
+          console.log(position);
           getWeather(position.coords.latitude, position.coords.longitude);
         })
         .catch((err) => {
@@ -56,14 +60,13 @@ function Weather(props) {
       alert("Geolocation not available");
     }
 
-    const interval = setInterval(
-      () => getWeather(weather.lat, weather.lon),
-      600000
-    );
+    const interval = setInterval(() => {
+      getWeather(weather.lat, weather.lon);
+    }, 600000);
     return () => {
       clearInterval(interval);
     };
-  }, [weather]);
+  }, []);
 
   if (weather.city) {
     return (
