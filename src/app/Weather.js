@@ -50,7 +50,6 @@ function Weather(props) {
     if (navigator.geolocation) {
       getPosition()
         .then((position) => {
-          console.log(position);
           getWeather(position.coords.latitude, position.coords.longitude);
         })
         .catch((err) => {
