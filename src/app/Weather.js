@@ -24,7 +24,8 @@ function Weather(props) {
   };
   const getWeather = async (lat, lon) => {
     const api_call = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+      // `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+      `https://ClockBackend.ahmedkamran.repl.co/${lat}/${lon}`
     );
     const data = await api_call.json();
     try {
