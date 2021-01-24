@@ -25,3 +25,4 @@ yarn-error.log*
 .eslintcache
 .env
 launch.json
+/backend/node_modules
