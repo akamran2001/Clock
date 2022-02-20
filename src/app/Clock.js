@@ -92,13 +92,13 @@ export default function Clock() {
       <Weather />
       <div className="row">
         <h6 style={{ fontFamily: "monospace" }}>
-        Made with ❤️️ by{" "}
+          Source code on my{" "}
           <a
             className="text-white"
             style={{ textDecoration: "none" }}
             href="https://github.com/akamran2001/Clock"
           >
-            Ahmed Kamran
+            GitHub
           </a>
         </h6>
       </div>
